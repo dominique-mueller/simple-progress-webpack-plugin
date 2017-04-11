@@ -17,9 +17,9 @@
 
 ## What it does
 
-**simple-progress-webpack-plugin** is a plugin for **Webpack 2**. It improves the overall Webpack Developer Experience by showing a much
-more detailed and also visually appealing build progress in the command line. Four different output formats are available, from which two
-are ready to be used in a CI environment (such as *Travis CI*).
+**simple-progress-webpack-plugin** is a plugin for **[Webpack 2](https://webpack.js.org/)**. It improves the overall Webpack Developer
+Experience by showing a much more detailed and also visually appealing build progress in the command line. Four different output formats are
+available, from which two are ready to be used in a CI environment (such as *Travis CI*).
 
 <br>
 
@@ -64,31 +64,32 @@ plugins: [
 ]
 ```
 
-The following logging output formats are available:
+The following is a list of available logging output formats. While `compact` is the default format, `expanded` is recommended for CI usage.
 
 ### `minimal`
 
-The `minimal` logger prints everything into a single line, constantly updated during the build progress. This makes it look pretty similar
-to what the **[Angular CLI](https://github.com/angular/angular-cli)** outputs during build. So, this is the perfect logger for minimalists.
+The `minimal` logger prints everything into a single line, constantly updated during build. This makes it look pretty similar to what the
+**[Angular CLI](https://github.com/angular/angular-cli)** outputs during build. So, if you're a minimalist, this is probably the right
+logger for you!
 
-✔ CI ready
+✖ not CI ready
 
 *TODO: Screenshot*
 
 ### `compact`
 
-The `compact` logger is the default logger of this plugin. It shows each build step with further details (such as the sub-progress) while
-still appearing rather compact.
+The `compact` logger is the default logger. It shows each build step with further details (such as the sub-progress and several sub-steps)
+while still not taking up too much space (thus the name compact).
 
-✔ CI ready
+✖ not CI ready
 
 *TODO: Screenshot*
 
 ### `expanded`
 
-The `expanded` logger is pretty similar to the `compact` logger, yet does print every sub-step into its own separate line.
+The `expanded` logger is pretty similar to the `compact` logger, but prints every sub-step into its own separate line.
 
-✖ not CI ready
+✔ CI ready
 
 *TODO: Screenshot*
 
@@ -97,7 +98,7 @@ The `expanded` logger is pretty similar to the `compact` logger, yet does print 
 The `verbose` / `debug` logger logs everything. Like everything. The full truth, every crucial detail webpakc has to offer. Best use it for
 debugging purposes (or for finding bugs in this plugin).
 
-✖ not CI ready
+✔ CI ready
 
 *TODO: Screenshot*
 
