@@ -69,10 +69,9 @@ The following logging output formats are available:
 ### `minimal`
 
 The `minimal` logger prints everything into a single line, constantly updated during the build progress. This makes it look pretty similar
-to what the **[Angular CLI](https://github.com/angular/angular-cli)** outputs during build. So, if you're a minmimalist, this could be the
-perfect logger for you.
+to what the **[Angular CLI](https://github.com/angular/angular-cli)** outputs during build. So, this is the perfect logger for minimalists.
 
-> :heavy_check_mark: CI ready
+✔ CI ready
 
 *TODO: Screenshot*
 
@@ -81,7 +80,7 @@ perfect logger for you.
 The `compact` logger is the default logger of this plugin. It shows each build step with further details (such as the sub-progress) while
 still appearing rather compact.
 
-> :heavy_check_mark: CI ready
+✔ CI ready
 
 *TODO: Screenshot*
 
@@ -89,7 +88,7 @@ still appearing rather compact.
 
 The `expanded` logger is pretty similar to the `compact` logger, yet does print every sub-step into its own separate line.
 
-> :heavy_multiplication_x: not CI ready
+✖ not CI ready
 
 *TODO: Screenshot*
 
@@ -98,7 +97,7 @@ The `expanded` logger is pretty similar to the `compact` logger, yet does print 
 The `verbose` / `debug` logger logs everything. Like everything. The full truth, every crucial detail webpakc has to offer. Best use it for
 debugging purposes (or for finding bugs in this plugin).
 
-> :heavy_multiplication_x: not CI ready
+✖ not CI ready
 
 *TODO: Screenshot*
 
