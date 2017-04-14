@@ -4,6 +4,14 @@ Also see the **[release page]( https://github.com/dominique-mueller/simple-progr
 
 <br>
 
+## [1.0.2](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.2) / 2017-04-14
+
+### Chores
+
+* **travis:** Extend Travis CI install script ([#6](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/6)) ([15d71af](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/15d71af))
+
+<br>
+
 ## [1.0.1](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.1) / 2017-04-14
 
 ### Chores
