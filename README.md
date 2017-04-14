@@ -64,43 +64,46 @@ plugins: [
 ]
 ```
 
-The following is a list of available logging output formats. While `compact` is the default format, `expanded` is recommended for CI usage.
+The following is a list of available logging output formats. While `compact` is the default format, `expanded` is the recommended one for
+being used within a CI environment.
+
+<br>
 
 ### `minimal`
 
 The `minimal` logger prints everything into a single line, constantly updated during build. This makes it look pretty similar to what the
 **[Angular CLI](https://github.com/angular/angular-cli)** outputs during build. So, if you're a minimalist, this is probably the right
-logger for you!
+logger for you! *This logger format is not recommended for being used within a CI environment*.
 
-✖ not CI ready
+![Minimal Logger Preview GIF](/docs/minimal-logger-preview.gif?raw=true)
 
-*TODO: Screenshot*
+<br>
 
 ### `compact`
 
 The `compact` logger is the default logger. It shows each build step with further details (such as the sub-progress and several sub-steps)
-while still not taking up too much space (thus the name compact).
+while still not taking up too much space (thus the name compact). *This logger format is not recommended for being used within a CI
+environment*.
 
-✖ not CI ready
+![Compact Logger Preview GIF](/docs/compact-logger-preview.gif?raw=true)
 
-*TODO: Screenshot*
+<br>
 
 ### `expanded`
 
-The `expanded` logger is pretty similar to the `compact` logger, but prints every sub-step into its own separate line.
+The `expanded` / `extended` logger is pretty similar to the `compact` logger, but prints every sub-step into its own separate line. *This
+logger format can also be used within a CI environment*.
 
-✔ CI ready
+![Expanded Logger Preview GIF](/docs/expanded-logger-preview.gif?raw=true)
 
-*TODO: Screenshot*
+<br>
 
 ### `verbose`
 
-The `verbose` / `debug` logger logs everything. Like everything. The full truth, every crucial detail webpakc has to offer. Best use it for
-debugging purposes (or for finding bugs in this plugin).
+The `verbose` / `debug` logger logs everything. Like everything. The full truth, every crucial detail Webpack has to offer. Best use it for
+debugging purposes (or for finding bugs in this plugin). *This logger format can also be used within a CI environment*.
 
-✔ CI ready
-
-*TODO: Screenshot*
+![Verbose Logger Preview GIF](/docs/verbose-logger-preview.gif?raw=true)
 
 <br>
 
