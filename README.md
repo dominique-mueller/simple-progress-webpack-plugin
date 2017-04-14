@@ -66,6 +66,8 @@ plugins: [
 
 The following is a list of available logging output formats. While `compact` is the default format, `expanded` is recommended for CI usage.
 
+<br>
+
 ### `minimal`
 
 The `minimal` logger prints everything into a single line, constantly updated during build. This makes it look pretty similar to what the
@@ -76,6 +78,8 @@ logger for you!
 
 ![Minimal Logger Preview GIF](/docs/minimal-logger-preview.gif?raw=true)
 
+<br>
+
 ### `compact`
 
 The `compact` logger is the default logger. It shows each build step with further details (such as the sub-progress and several sub-steps)
@@ -83,7 +87,9 @@ while still not taking up too much space (thus the name compact).
 
 ✖ not CI ready
 
-*TODO: Screenshot*
+![Compact Logger Preview GIF](/docs/compact-logger-preview.gif?raw=true)
+
+<br>
 
 ### `expanded`
 
@@ -91,7 +97,9 @@ The `expanded` logger is pretty similar to the `compact` logger, but prints ever
 
 ✔ CI ready
 
-*TODO: Screenshot*
+![Expanded Logger Preview GIF](/docs/expanded-logger-preview.gif?raw=true)
+
+<br>
 
 ### `verbose`
 
@@ -100,7 +108,7 @@ debugging purposes (or for finding bugs in this plugin).
 
 ✔ CI ready
 
-*TODO: Screenshot*
+![Verbose Logger Preview GIF](/docs/verbose-logger-preview.gif?raw=true)
 
 <br>
 
