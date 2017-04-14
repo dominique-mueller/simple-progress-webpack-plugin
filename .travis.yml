@@ -18,7 +18,9 @@ before_install:
     fi
   - npm install -g npm
 install:
+  - npm prune
   - npm install
+  - npm update
 
 before_deploy:
   - git config --global user.name "dominique-mueller"
