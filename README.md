@@ -95,7 +95,7 @@ while still not taking up too much space (thus the name compact).
 
 The `expanded` / `extended` logger is pretty similar to the `compact` logger, but prints every sub-step into its own separate line.
 
-✔ CI ready
+> ✔ CI ready
 
 ![Expanded Logger Preview GIF](/docs/expanded-logger-preview.gif?raw=true)
 
