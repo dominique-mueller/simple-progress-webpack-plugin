@@ -93,7 +93,7 @@ while still not taking up too much space (thus the name compact).
 
 ### `expanded`
 
-The `expanded` logger is pretty similar to the `compact` logger, but prints every sub-step into its own separate line.
+The `expanded` / `extended` logger is pretty similar to the `compact` logger, but prints every sub-step into its own separate line.
 
 ✔ CI ready
 
@@ -103,7 +103,7 @@ The `expanded` logger is pretty similar to the `compact` logger, but prints ever
 
 ### `verbose`
 
-The `verbose` / `debug` logger logs everything. Like everything. The full truth, every crucial detail webpakc has to offer. Best use it for
+The `verbose` / `debug` logger logs everything. Like everything. The full truth, every crucial detail Webpack has to offer. Best use it for
 debugging purposes (or for finding bugs in this plugin).
 
 ✔ CI ready
