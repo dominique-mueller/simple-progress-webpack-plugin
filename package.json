@@ -24,6 +24,9 @@
 		"logger"
 	],
 	"main": "./index.js",
+	"scripts": {
+		"automatic-release": "automatic-release"
+	},
 	"dependencies": {
 		"chalk": "1.1.x",
 		"figures": "2.0.x",
@@ -33,6 +36,7 @@
 		"webpack": ">= 2.0.0 < 3.0.0"
 	},
 	"devDependencies": {
+		"automatic-release": "1.0.x",
 		"webpack": "2.4.x"
 	}
 }
