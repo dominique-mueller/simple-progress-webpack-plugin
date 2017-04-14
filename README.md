@@ -91,6 +91,8 @@ while still not taking up too much space (thus the name compact).
 
 <br>
 
+---
+
 ### `expanded`
 
 The `expanded` / `extended` logger is pretty similar to the `compact` logger, but prints every sub-step into its own separate line.
@@ -98,6 +100,8 @@ The `expanded` / `extended` logger is pretty similar to the `compact` logger, bu
 ![Expanded Logger Preview GIF](/docs/expanded-logger-preview.gif?raw=true)
 
 > ✔ CI ready
+
+---
 
 <br>
 
