@@ -74,7 +74,7 @@ logger for you!
 
 ✖ not CI ready
 
-*TODO: Screenshot*
+![Minimal Logger Preview GIF](/docs/minimal-logger-preview.gif?raw=true)
 
 ### `compact`
 
