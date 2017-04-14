@@ -66,7 +66,7 @@ plugins: [
 
 The following is a list of available logging output formats. While `compact` is the default format, `expanded` is recommended for CI usage.
 
-<br>
+---
 
 ### `minimal`
 
@@ -74,22 +74,20 @@ The `minimal` logger prints everything into a single line, constantly updated du
 **[Angular CLI](https://github.com/angular/angular-cli)** outputs during build. So, if you're a minimalist, this is probably the right
 logger for you!
 
-![Minimal Logger Preview GIF](/docs/minimal-logger-preview.gif?raw=true)
-
 > ✖ not CI ready
 
-<br>
+![Minimal Logger Preview GIF](/docs/minimal-logger-preview.gif?raw=true)
+
+---
 
 ### `compact`
 
 The `compact` logger is the default logger. It shows each build step with further details (such as the sub-progress and several sub-steps)
 while still not taking up too much space (thus the name compact).
 
-![Compact Logger Preview GIF](/docs/compact-logger-preview.gif?raw=true)
-
 > ✖ not CI ready
 
-<br>
+![Compact Logger Preview GIF](/docs/compact-logger-preview.gif?raw=true)
 
 ---
 
@@ -97,22 +95,22 @@ while still not taking up too much space (thus the name compact).
 
 The `expanded` / `extended` logger is pretty similar to the `compact` logger, but prints every sub-step into its own separate line.
 
-![Expanded Logger Preview GIF](/docs/expanded-logger-preview.gif?raw=true)
-
 > ✔ CI ready
 
----
+![Expanded Logger Preview GIF](/docs/expanded-logger-preview.gif?raw=true)
 
-<br>
+---
 
 ### `verbose`
 
 The `verbose` / `debug` logger logs everything. Like everything. The full truth, every crucial detail Webpack has to offer. Best use it for
 debugging purposes (or for finding bugs in this plugin).
 
+> ✔ CI ready
+
 ![Verbose Logger Preview GIF](/docs/verbose-logger-preview.gif?raw=true)
 
-> ✔ CI ready
+---
 
 <br>
 
