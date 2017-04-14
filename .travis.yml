@@ -1,0 +1,16 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+
+branches:
+  only:
+    - master
+    - develop
+
+before_install:
+  - npm install -g npm
+install:
+  - npm install
