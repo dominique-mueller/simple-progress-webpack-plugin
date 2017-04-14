@@ -25,7 +25,8 @@
 	],
 	"main": "./index.js",
 	"scripts": {
-		"automatic-release": "automatic-release"
+		"automatic-release": "automatic-release",
+		"list-deployed-files": "pkgfiles --sort=name"
 	},
 	"dependencies": {
 		"chalk": "1.1.x",
@@ -37,6 +38,7 @@
 	},
 	"devDependencies": {
 		"automatic-release": "1.0.x",
+		"pkgfiles": "2.3.x",
 		"webpack": "2.4.x"
 	}
 }
