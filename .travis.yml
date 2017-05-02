@@ -9,6 +9,7 @@ branches:
   only:
     - master
     - develop
+    - /^greenkeeper/.*$/
 
 before_install:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
