@@ -2,8 +2,6 @@
 
 # simple-progress-webpack-plugin
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/dominique-mueller/simple-progress-webpack-plugin.svg)](https://greenkeeper.io/)
-
 **A simple progress plugin for Webpack, coming with four different logging output formats.**
 
 [![npm version](https://img.shields.io/npm/v/simple-progress-webpack-plugin.svg?maxAge=3600&style=flat)](https://www.npmjs.com/package/simple-progress-webpack-plugin)
