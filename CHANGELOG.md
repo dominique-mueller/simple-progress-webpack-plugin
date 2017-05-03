@@ -4,6 +4,18 @@ Also see the **[release page]( https://github.com/dominique-mueller/simple-progr
 
 <br>
 
+## [1.0.3](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.3) / 2017-05-03
+
+### Bug Fixes
+
+* **module-names:** Fix module name transformation ([#8](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/8)) ([3fc27d9](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/3fc27d9)), closes [#7](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/7)
+
+### Chores
+
+* **dependencies:** Update dependencies to their latest version ([#9](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/9)) ([39a51d4](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/39a51d4))
+
+<br>
+
 ## [1.0.2](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.2) / 2017-04-14
 
 ### Chores
