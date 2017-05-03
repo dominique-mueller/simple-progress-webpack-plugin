@@ -62,7 +62,9 @@ module.exports = function ExpandedLogger() {
 
 				// Transform absolute paths into relative ones (to shorten the so so incredible long path)
 				if ( betterModuleName.indexOf( absoluteProjectPath ) !== -1 ) {
-					betterModuleName = betterModuleName.split( `${ absoluteProjectPath }\\` )[ 1 ];
+					betterModuleName = betterModuleName
+						.split( `${ absoluteProjectPath }` )[ 1 ] // Transform absolute path to relative one
+						.substring( 1 ); // Remove leading path slash
 				}
 
 				// Improve the path presentation further by enforcing style consistency and removing unnecessary details
