@@ -34,11 +34,11 @@
 		"log-update": "2.0.x"
 	},
 	"peerDependencies": {
-		"webpack": ">=2.5.0"
+		"webpack": ">=2.0.0 <3.0.0"
 	},
 	"devDependencies": {
 		"automatic-release": "1.0.x",
 		"pkgfiles": "2.3.x",
-		"webpack": "2.4.x"
+		"webpack": "2.5.x"
 	}
 }
