@@ -9,7 +9,9 @@ const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
  */
 module.exports = function VerboseLogger() {
 
-	const startTime = new Date().getTime();
+	// Variables for the process, reset after each run
+	let startTime;
+	let previousStep = 0;
 
 	// Initial logs
 	let logLine;
@@ -20,9 +22,15 @@ module.exports = function VerboseLogger() {
 	 */
 	return new ProgressPlugin( ( progress, message, moduleProgress, activeModules, moduleName ) => {
 
+		// Reset process variables for this run
+		if ( previousStep === 0 ) {
+			startTime = new Date().getTime();
+		}
+
 		// STEP 1: COMPILATION
 		if ( progress >= 0 && progress < 0.1 ) {
 			logLine = 'Compile modules';
+			previousStep = 1;
 		}
 
 		// STEP 2: BUILDING
@@ -31,22 +39,26 @@ module.exports = function VerboseLogger() {
 			if ( moduleName !== undefined ) {
 				logLine += ` (${ moduleName })`;
 			}
+			previousStep = 2;
 		}
 
 		// STEP 3: OPTIMIZATION
 		if ( progress > 0.7 && progress < 0.95 ) {
 			logLine = `Optimize modules (${ message })`;
+			previousStep = 3;
 		}
 
 		// STEP 4: EMIT
 		if ( progress >= 0.95 && progress < 1 ) {
 			logLine = 'Emit files';
+			previousStep = 4;
 		}
 
 		// STEP 5: FOOTER
 		if ( progress === 1 ) {
 
 			// Calculate process time
+			previousStep = 0;
 			const finishTime = new Date().getTime();
 			const processTime = ( ( finishTime - startTime ) / 1000 ).toFixed( 3 );
 
