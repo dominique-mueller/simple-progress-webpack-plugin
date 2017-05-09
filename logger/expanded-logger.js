@@ -13,7 +13,9 @@ const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
 module.exports = function ExpandedLogger() {
 
 	const absoluteProjectPath = `${ path.resolve( '.' ).toString() }`;
-	const startTime = new Date().getTime();
+
+	// Variables for the process, reset after each run
+	let startTime;
 	let previousStep = 0;
 
 	// Initial log
@@ -23,6 +25,11 @@ module.exports = function ExpandedLogger() {
 	 * Use the webpack-internal progress plugin as the base of the logger
 	 */
 	return new ProgressPlugin( ( progress, message, moduleProgress, activeModules, moduleName ) => {
+
+		// Reset process variables for this run
+		if ( previousStep === 0 ) {
+			startTime = new Date().getTime();
+		}
 
 		// STEP 1: COMPILATION
 		if ( progress >= 0 && progress < 0.1 ) {
@@ -126,13 +133,8 @@ module.exports = function ExpandedLogger() {
 		// STEP 5: FOOTER
 		if ( progress === 1 ) {
 
-			// Skip if we jumped back a step, else update the step counter
-			if ( previousStep === 5 ) {
-				return;
-			}
-			previousStep = 5;
-
 			// Calculate process time
+			previousStep = 0;
 			const finishTime = new Date().getTime();
 			const processTime = ( ( finishTime - startTime ) / 1000 ).toFixed( 3 );
 

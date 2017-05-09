@@ -14,11 +14,13 @@ const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
 module.exports = function CompactLogger() {
 
 	const absoluteProjectPath = `${ path.resolve( '.' ).toString() }`;
-	const startTime = new Date().getTime();
+
+	// Variables for the process, reset after each run
+	let startTime;
 	let previousStep = 0;
-	let logLines = [];
 
 	// Initial log
+	let logLines = [];
 	log( 'Webpack: Starting ...' );
 
 	/**
@@ -28,6 +30,11 @@ module.exports = function CompactLogger() {
 
 		// Reset log output
 		logLines = [];
+
+		// Reset process variables for this run
+		if ( previousStep === 0 ) {
+			startTime = new Date().getTime();
+		}
 
 		// STEP 0: HEADER
 		logLines.push( chalk.white( 'Webpack: Starting ...\n' ) );
@@ -150,13 +157,8 @@ module.exports = function CompactLogger() {
 		// STEP 5: FOOTER
 		if ( progress === 1 ) {
 
-			// Skip if we already are done, else update the step counter
-			if ( previousStep === 5 ) {
-				return;
-			}
-			previousStep = 5;
-
 			// Calculate process time
+			previousStep = 0;
 			const finishTime = new Date().getTime();
 			const processTime = ( ( finishTime - startTime ) / 1000 ).toFixed( 3 );
 
@@ -166,8 +168,6 @@ module.exports = function CompactLogger() {
 
 		// Finally, let's bring those logs to da screen
 		log( logLines.join( '\n' ) );
-
-		// Finish log when we're done here
 		if ( progress === 1 ) {
 			log.done();
 		}
