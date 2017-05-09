@@ -4,6 +4,18 @@ Also see the **[release page]( https://github.com/dominique-mueller/simple-progr
 
 <br>
 
+## [1.0.4](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.4) / 2017-05-09
+
+### Bug Fixes
+
+* **progress:** Fix progress to be printed for every webpack run (e.g. in watch mode) ([#13](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/13)) ([d841726](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/d841726)), closes [#11](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/11)
+
+### Chores
+
+* **dependencies:** Update webpack to latest version ([#12](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/12)) ([4f85912](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/4f85912))
+
+<br>
+
 ## [1.0.3](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.3) / 2017-05-03
 
 ### Bug Fixes
