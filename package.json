@@ -37,7 +37,7 @@
 		"webpack": ">=2.0.0 <3.0.0"
 	},
 	"devDependencies": {
-		"automatic-release": "1.0.x",
+		"automatic-release": "~1.1.0",
 		"pkgfiles": "2.3.x",
 		"webpack": "2.5.x"
 	}
