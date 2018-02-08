@@ -10,13 +10,16 @@ const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
 /**
  * Minimal Logger
  */
-module.exports = function MinimalLogger() {
+module.exports = function MinimalLogger(options) {
 
 	const absoluteProjectPath = `${ path.resolve( '.' ).toString() }`;
 
 	// Variables for the process, reset after each run
 	let startTime;
 	let previousStep = 0;
+
+	// Configure color
+	chalk.enabled = options.color;
 
 	// Initial log
 	let logLine = 'Webpack: Starting ...';
