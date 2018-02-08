@@ -11,9 +11,12 @@ const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
 /**
  * Compact Logger
  */
-module.exports = function CompactLogger() {
+module.exports = function CompactLogger(options) {
 
 	const absoluteProjectPath = `${ path.resolve( '.' ).toString() }`;
+
+	// Configure color
+	chalk.enabled = options.color;
 
 	// Variables for the process, reset after each run
 	let startTime;

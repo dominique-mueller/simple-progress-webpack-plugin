@@ -7,11 +7,14 @@ const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
 /**
  * Verbose Logger (aka "the full truth")
  */
-module.exports = function VerboseLogger() {
+module.exports = function VerboseLogger(options) {
 
 	// Variables for the process, reset after each run
 	let startTime;
 	let previousStep = 0;
+
+	// Configure color
+	chalk.enabled = options.color;
 
 	// Initial logs
 	let logLine;

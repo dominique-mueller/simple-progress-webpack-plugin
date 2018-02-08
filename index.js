@@ -8,6 +8,10 @@ const MinimalLogger = require( './logger/minimal-logger' );
 const VerboseLogger = require( './logger/verbose-logger' );
 const ExpandedLogger = require( './logger/expanded-logger' );
 
+function getOption(options, key, value) {
+	return (options && options.hasOwnProperty(key)) ? options[key] : value;
+}
+
 /**
  * Simple Progress Plugin for Webpack
  *
@@ -15,25 +19,24 @@ const ExpandedLogger = require( './logger/expanded-logger' );
  */
 module.exports = function SimpleProgressWebpackPlugin( options ) {
 
-	// Merge options
-	let internalOptions = {
-		format: ( options && options.hasOwnProperty( 'format' ) ) ? options.format : 'compact'
+	const internalOptions = {
+		format: getOption(options, 'format', 'compact'),
+		color: getOption(options, 'color', true)
 	};
 
 	// Return the correct progress plugin
 	switch( internalOptions.format ) {
 		case 'minimal':
-			return MinimalLogger();
-		case 'compact':
-			return CompactLogger();
+			return MinimalLogger(internalOptions);
 		case 'expanded':
 		case 'extended':
-			return ExpandedLogger();
+			return ExpandedLogger(internalOptions);
 		case 'verbose':
 		case 'debug':
-			return VerboseLogger();
+			return VerboseLogger(internalOptions);
+		case 'compact':
 		default:
-			return CompactLogger();
+			return CompactLogger(internalOptions);
 	}
 
 };
