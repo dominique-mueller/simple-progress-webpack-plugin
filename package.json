@@ -34,7 +34,7 @@
 		"log-update": "2.0.x"
 	},
 	"peerDependencies": {
-		"webpack": ">=2.0.0 <3.0.0"
+		"webpack": ">=2.6.0"
 	},
 	"devDependencies": {
 		"automatic-release": "1.0.x",
