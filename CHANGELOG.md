@@ -1,10 +1,26 @@
 # Changelog
 
-Also see the **[release page]( https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases )**.
+Also see the **[release page](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases)**.
 
 <br>
 
-## [1.0.4](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.4) / 2017-05-09
+## [1.1.0](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.1.0) (2018-02-18)
+
+### Chores
+
+* **dependencies:** Update dependency automatic-release to 1.1.x ([#22](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/22)) ([bc08363](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/bc08363))
+* **dependencies:** Update dependency chalk to 2.3.x ([#25](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/25)) ([0d8f851](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/0d8f851))
+* **dependencies:** Update dependency log-update to 2.3.x ([#23](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/23)) ([c276852](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/c276852))
+* **dependencies:** Update dependency webpack to 2.7.x ([#24](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/24)) ([07ad4e9](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/07ad4e9))
+* **renovate:** Add renovate ([#21](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/21)) ([4d0d324](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/4d0d324))
+
+### Features
+
+* **options:** Add color flag ([#20](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/20)) ([4e4aa43](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/4e4aa43))
+
+<br>
+
+## [1.0.4](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.4) (2017-05-09)
 
 ### Bug Fixes
 
@@ -16,7 +32,7 @@ Also see the **[release page]( https://github.com/dominique-mueller/simple-progr
 
 <br>
 
-## [1.0.3](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.3) / 2017-05-03
+## [1.0.3](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.3) (2017-05-03)
 
 ### Bug Fixes
 
@@ -28,7 +44,7 @@ Also see the **[release page]( https://github.com/dominique-mueller/simple-progr
 
 <br>
 
-## [1.0.2](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.2) / 2017-04-14
+## [1.0.2](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.2) (2017-04-14)
 
 ### Chores
 
@@ -36,7 +52,7 @@ Also see the **[release page]( https://github.com/dominique-mueller/simple-progr
 
 <br>
 
-## [1.0.1](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.1) / 2017-04-14
+## [1.0.1](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.1) (2017-04-14)
 
 ### Chores
 
@@ -44,7 +60,7 @@ Also see the **[release page]( https://github.com/dominique-mueller/simple-progr
 
 <br>
 
-## [1.0.0](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.0) / 2017-04-14
+## [1.0.0](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.0.0) (2017-04-14)
 
 ### Chores
 
