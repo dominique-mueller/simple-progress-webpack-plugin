@@ -2,12 +2,13 @@
 
 const path = require( 'path' );
 
+const chalk = require( 'chalk' );
 const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
 
 /**
  * Verbose Logger (aka "the full truth")
  */
-module.exports = function VerboseLogger(options) {
+module.exports = function VerboseLogger( options ) {
 
 	// Variables for the process, reset after each run
 	let startTime;

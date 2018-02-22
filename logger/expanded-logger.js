@@ -10,12 +10,12 @@ const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
 /**
  * Expanded Logger
  */
-module.exports = function ExpandedLogger(options) {
-
-	const absoluteProjectPath = `${ path.resolve( '.' ).toString() }`;
+module.exports = function ExpandedLogger( options ) {
 
 	// Configure color
 	chalk.enabled = options.color;
+
+	const absoluteProjectPath = `${ path.resolve( '.' ).toString() }`;
 
 	// Variables for the process, reset after each run
 	let startTime;
