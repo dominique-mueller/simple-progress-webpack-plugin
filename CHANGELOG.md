@@ -4,6 +4,14 @@ Also see the **[release page](https://github.com/dominique-mueller/simple-progre
 
 <br>
 
+## [1.1.1](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.1.1) (2018-02-22)
+
+### Bug Fixes
+
+* **logger:** Add missing chalk import ([#28](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/28)) ([0545e0c](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/0545e0c)), closes [#27](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/27)
+
+<br>
+
 ## [1.1.0](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.1.0) (2018-02-18)
 
 ### Chores
