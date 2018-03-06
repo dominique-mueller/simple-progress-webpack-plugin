@@ -1,7 +1,7 @@
 {
 	"name": "simple-progress-webpack-plugin",
 	"description": "A simple progress plugin for Webpack, coming with four different logging output formats.",
-	"version": "1.1.2",
+	"version": "1.1.1",
 	"author": {
 		"name": "Dominique Müller",
 		"email": "dominique.m.mueller@gmail.com",
@@ -39,6 +39,6 @@
 	"devDependencies": {
 		"automatic-release": "1.1.x",
 		"pkgfiles": "2.3.x",
-		"webpack": "2.7.x"
+		"webpack": "4.1.x"
 	}
 }
