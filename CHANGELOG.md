@@ -4,6 +4,14 @@ Also see the **[release page](https://github.com/dominique-mueller/simple-progre
 
 <br>
 
+## [1.1.2](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.1.2) (2018-03-06)
+
+### Chores
+
+* **dependencies:** Upgrade webpack peer-dependency ([#31](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/31)) ([e9e6598](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/e9e6598))
+
+<br>
+
 ## [1.1.1](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.1.1) (2018-02-22)
 
 ### Bug Fixes
