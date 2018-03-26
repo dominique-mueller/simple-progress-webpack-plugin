@@ -39,6 +39,6 @@
 	"devDependencies": {
 		"automatic-release": "1.1.x",
 		"pkgfiles": "2.3.x",
-		"webpack": "4.1.x"
+		"webpack": "4.2.x"
 	}
 }
