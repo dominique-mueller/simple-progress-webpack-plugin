@@ -29,7 +29,7 @@
 		"list-deployed-files": "pkgfiles --sort=name"
 	},
 	"dependencies": {
-		"chalk": "2.3.x",
+		"chalk": "2.4.x",
 		"figures": "2.0.x",
 		"log-update": "2.3.x"
 	},
