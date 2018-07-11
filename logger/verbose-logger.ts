@@ -1,24 +1,23 @@
 'use strict';
 
-const path = require( 'path' );
-
-const chalk = require( 'chalk' );
-const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
+import chalk from 'chalk';
+import { ProgressPlugin } from 'webpack';
+import { InternalOptions } from '..';
 
 /**
  * Verbose Logger (aka "the full truth")
  */
-module.exports = function VerboseLogger( options ) {
+export default function VerboseLogger( options: InternalOptions ) {
 
 	// Variables for the process, reset after each run
-	let startTime;
-	let previousStep = 0;
+	let startTime: number;
+	let previousStep: number = 0;
 
 	// Configure color
 	chalk.enabled = options.color;
 
 	// Initial logs
-	let logLine;
+	let logLine: string;
 	console.log( `${ getTimePrefix() } Webpack: Starting ...\n` );
 
 	/**
@@ -84,10 +83,10 @@ module.exports = function VerboseLogger( options ) {
 /**
  * Calculate a time prefix (similar to what gulp does)
  */
-function getTimePrefix() {
-	const date = new Date();
-	const hours = `0${ date.getHours() }`.slice( -2 );
-	const minutes = `0${ date.getMinutes() }`.slice( -2 );
-	const seconds = `0${ date.getSeconds() }`.slice( -2 );
+function getTimePrefix(): string {
+	const date: Date = new Date();
+	const hours: string = `0${ date.getHours() }`.slice( -2 );
+	const minutes: string = `0${ date.getMinutes() }`.slice( -2 );
+	const seconds: string = `0${ date.getSeconds() }`.slice( -2 );
 	return `[${ hours }:${ minutes }:${ seconds }]`;
 }

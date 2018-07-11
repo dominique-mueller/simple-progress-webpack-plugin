@@ -1,46 +1,41 @@
 'use strict';
 
-const path = require( 'path' );
-
-const chalk = require( 'chalk' );
-const figures = require( 'figures' );
-const log = require( 'log-update' );
-
-const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
+import path from 'path';
+import chalk from 'chalk';
+import log from 'log-update';
+import { ProgressPlugin } from 'webpack';
+import { InternalOptions } from '..';
 
 /**
- * Compact Logger
+ * Minimal Logger
  */
-module.exports = function CompactLogger( options ) {
+export default function MinimalLogger( options: InternalOptions ) {
 
 	// Configure color
 	chalk.enabled = options.color;
 
-	const absoluteProjectPath = `${ path.resolve( '.' ).toString() }`;
+	const absoluteProjectPath: string = `${ path.resolve( '.' ).toString() }`;
 
 	// Variables for the process, reset after each run
-	let startTime;
-	let previousStep = 0;
+	let startTime: number;
+	let previousStep: number = 0;
 
 	// Initial log
-	let logLines = [];
-	log( 'Webpack: Starting ...' );
+	let logLine: string = 'Webpack: Starting ...';
+	log( logLine );
 
 	/**
 	 * Use the webpack-internal progress plugin as the base of the logger
 	 */
 	return new ProgressPlugin( ( progress, message, moduleProgress, activeModules, moduleName ) => {
 
-		// Reset log output
-		logLines = [];
+		// Progress
+		logLine = chalk.yellow( `[${ Math.round( progress * 100 ) }%] ` );
 
 		// Reset process variables for this run
 		if ( previousStep === 0 ) {
 			startTime = new Date().getTime();
 		}
-
-		// STEP 0: HEADER
-		logLines.push( chalk.white( 'Webpack: Starting ...\n' ) );
 
 		// STEP 1: COMPILATION
 		if ( progress >= 0 && progress < 0.1 ) {
@@ -51,11 +46,7 @@ module.exports = function CompactLogger( options ) {
 			}
 			previousStep = 1;
 
-			logLines.push( chalk.white( `  ${ figures.pointer } Compile modules` ) );
-
-		} else if ( progress >= 0.1 ) {
-
-			logLines.push( chalk.green( `  ${ figures.tick } Compile modules` ) );
+			logLine += chalk.white( 'Compile modules ...' );
 
 		}
 
@@ -68,9 +59,8 @@ module.exports = function CompactLogger( options ) {
 			}
 			previousStep = 2;
 
-			// Log progress line (with sub-progress indicator)
-			const subProgress = Math.round( ( progress - 0.1 ) * 10000 / 60 );
-			logLines.push( chalk.white( `  ${ figures.pointer } Build modules (${ subProgress }%)` ) );
+			// Log progress line
+			logLine += chalk.white( 'Build modules ...' );
 
 			// Log additional information (if possible)
 			if ( moduleName !== undefined ) {
@@ -106,13 +96,10 @@ module.exports = function CompactLogger( options ) {
 
 				const [ betterModulesDone, betterAllModules ] = moduleProgress.split( '/' );
 				const moduleDetails = `${ betterModulesDone } of ${ betterAllModules } :: ${ betterModuleName }`;
-				logLines.push( chalk.grey( `    ${ figures.arrowRight } ${ moduleDetails }` ) );
+
+				logLine += chalk.grey( ` (${ moduleDetails })` );
 
 			}
-
-		} else if ( progress > 0.7 ) {
-
-			logLines.push( chalk.green( `  ${ figures.tick } Build modules` ) );
 
 		}
 
@@ -126,17 +113,10 @@ module.exports = function CompactLogger( options ) {
 			previousStep = 3;
 
 			// Log progress line (with sub-progress indicator)
-			const subProgress = Math.round( ( progress - 0.71 ) * 10000 / 23 );
-			logLines.push( chalk.white( `  ${ figures.pointer } Optimize modules (${ subProgress }%)` ) );
-
-			const formattedMessage = `${ message[ 0 ].toUpperCase() }${ message.slice( 1 ) }`;
+			logLine += chalk.white( 'Optimize modules ...' );
 			const formattedMessageExtra = progress === 0.91 ? ' -- may take a while' : ''; // Add some extra info (calming devs down)
 
-			logLines.push( chalk.grey( `    ${ figures.arrowRight } ${ formattedMessage }${ formattedMessageExtra } ...` ) );
-
-		} else if ( progress >= 0.95 ) {
-
-			logLines.push( chalk.green( `  ${ figures.tick } Optimize modules` ) );
+			logLine += chalk.grey( ` (${ message }${ formattedMessageExtra })` );
 
 		}
 
@@ -149,11 +129,7 @@ module.exports = function CompactLogger( options ) {
 			}
 			previousStep = 4;
 
-			logLines.push( chalk.white( `  ${ figures.pointer } Emit files` ) );
-
-		} else if ( progress === 1 ) {
-
-			logLines.push( chalk.green( `  ${ figures.tick } Emit files` ) );
+			logLine += chalk.white( 'Emit files ...' );
 
 		}
 
@@ -165,12 +141,12 @@ module.exports = function CompactLogger( options ) {
 			const finishTime = new Date().getTime();
 			const processTime = ( ( finishTime - startTime ) / 1000 ).toFixed( 3 );
 
-			logLines.push( chalk.white( `\nWebpack: Finished after ${ processTime } seconds.\n` ) );
+			logLine = chalk.white( `Webpack: Finished after ${ processTime } seconds.\n` ); // Overwrite
 
 		}
 
 		// Finally, let's bring those logs to da screen
-		log( logLines.join( '\n' ) );
+		log( logLine );
 		if ( progress === 1 ) {
 			log.done();
 		}

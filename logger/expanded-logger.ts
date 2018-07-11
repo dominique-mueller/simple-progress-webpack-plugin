@@ -1,37 +1,32 @@
 'use strict';
 
-const path = require( 'path' );
-
-const chalk = require( 'chalk' );
-const log = require( 'log-update' );
-
-const ProgressPlugin = require( 'webpack/lib/ProgressPlugin' );
+import path from 'path';
+import chalk from 'chalk';
+import figures from 'figures';
+import { ProgressPlugin } from 'webpack';
+import { InternalOptions } from '..';
 
 /**
- * Minimal Logger
+ * Expanded Logger
  */
-module.exports = function MinimalLogger( options ) {
+export default function ExpandedLogger( options: InternalOptions ) {
 
 	// Configure color
 	chalk.enabled = options.color;
 
-	const absoluteProjectPath = `${ path.resolve( '.' ).toString() }`;
+	const absoluteProjectPath: string = `${ path.resolve( '.' ).toString() }`;
 
 	// Variables for the process, reset after each run
-	let startTime;
-	let previousStep = 0;
+	let startTime: number;
+	let previousStep: number = 0;
 
 	// Initial log
-	let logLine = 'Webpack: Starting ...';
-	log( logLine );
+	console.log( chalk.white( 'Webpack: Starting ...' ) );
 
 	/**
 	 * Use the webpack-internal progress plugin as the base of the logger
 	 */
 	return new ProgressPlugin( ( progress, message, moduleProgress, activeModules, moduleName ) => {
-
-		// Progress
-		logLine = chalk.yellow( `[${ Math.round( progress * 100 ) }%] ` );
 
 		// Reset process variables for this run
 		if ( previousStep === 0 ) {
@@ -44,10 +39,10 @@ module.exports = function MinimalLogger( options ) {
 			// Skip if we jumped back a step, else update the step counter
 			if ( previousStep > 1 ) {
 				return;
+			} else if ( previousStep < 1 ) {
+				console.log( chalk.white( `\n  ${ figures.pointer } Compile modules` ) );
 			}
 			previousStep = 1;
-
-			logLine += chalk.white( 'Compile modules ...' );
 
 		}
 
@@ -57,15 +52,15 @@ module.exports = function MinimalLogger( options ) {
 			// Skip if we jumped back a step, else update the step counter
 			if ( previousStep > 2 ) {
 				return;
+			} else if ( previousStep < 2 ) {
+				console.log( chalk.white( `\n  ${ figures.pointer } Build modules` ) );
 			}
 			previousStep = 2;
-
-			// Log progress line
-			logLine += chalk.white( 'Build modules ...' );
 
 			// Log additional information (if possible)
 			if ( moduleName !== undefined ) {
 
+				const roundedSubProgress = Math.round( ( progress - 0.1 ) * 10000 / 60 );
 				let betterModuleName = moduleName;
 
 				// Only show the file that is actually being processed (and remove all details about used loaders)
@@ -97,8 +92,7 @@ module.exports = function MinimalLogger( options ) {
 
 				const [ betterModulesDone, betterAllModules ] = moduleProgress.split( '/' );
 				const moduleDetails = `${ betterModulesDone } of ${ betterAllModules } :: ${ betterModuleName }`;
-
-				logLine += chalk.grey( ` (${ moduleDetails })` );
+				console.log( chalk.grey( `    ${ figures.arrowRight } [${ roundedSubProgress }%] ${ moduleDetails }` ) );
 
 			}
 
@@ -110,14 +104,18 @@ module.exports = function MinimalLogger( options ) {
 			// Skip if we jumped back a step, else update the step counter
 			if ( previousStep > 3 ) {
 				return;
+			} else if ( previousStep < 3 ) {
+				console.log( chalk.white( `\n  ${ figures.pointer } Optimize modules` ) );
 			}
 			previousStep = 3;
 
 			// Log progress line (with sub-progress indicator)
-			logLine += chalk.white( 'Optimize modules ...' );
-			const formattedMessageExtra = progress === 0.91 ? ' -- may take a while' : ''; // Add some extra info (calming devs down)
+			const subProgress: number = Math.round( ( progress - 0.71 ) * 10000 / 23 );
 
-			logLine += chalk.grey( ` (${ message }${ formattedMessageExtra })` );
+			const formattedMessage: string = `${ message[ 0 ].toUpperCase() }${ message.slice( 1 ) }`;
+			const formattedMessageExtra: string = progress === 0.91 ? ' -- may take a while' : ''; // Add some extra info (calming devs down)
+
+			console.log( chalk.grey( `    ${ figures.arrowRight } [${ subProgress }%] ${ formattedMessage }${ formattedMessageExtra } ...` ) );
 
 		}
 
@@ -127,10 +125,10 @@ module.exports = function MinimalLogger( options ) {
 			// Skip if we jumped back a step, else update the step counter
 			if ( previousStep > 4 ) {
 				return;
+			} else if ( previousStep < 4 ) {
+				console.log( chalk.white( `\n  ${ figures.pointer } Emit files` ) );
 			}
 			previousStep = 4;
-
-			logLine += chalk.white( 'Emit files ...' );
 
 		}
 
@@ -139,17 +137,11 @@ module.exports = function MinimalLogger( options ) {
 
 			// Calculate process time
 			previousStep = 0;
-			const finishTime = new Date().getTime();
-			const processTime = ( ( finishTime - startTime ) / 1000 ).toFixed( 3 );
+			const finishTime: number = new Date().getTime();
+			const processTime: string = ( ( finishTime - startTime ) / 1000 ).toFixed( 3 );
 
-			logLine = chalk.white( `Webpack: Finished after ${ processTime } seconds.\n` ); // Overwrite
+			console.log( chalk.white( `\nWebpack: Finished after ${ processTime } seconds.\n` ) );
 
-		}
-
-		// Finally, let's bring those logs to da screen
-		log( logLine );
-		if ( progress === 1 ) {
-			log.done();
 		}
 
 	} );
