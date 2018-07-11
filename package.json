@@ -23,7 +23,7 @@
 		"simple",
 		"logger"
 	],
-	"main": "./index.js",
+	"main": "./index.ts",
 	"scripts": {
 		"automatic-release": "automatic-release",
 		"list-deployed-files": "pkgfiles --sort=name"
@@ -37,8 +37,12 @@
 		"webpack": ">=2.0.0"
 	},
 	"devDependencies": {
+		"@types/figures": "^2.0.0",
+		"@types/log-update": "^2.0.0",
+		"@types/webpack": "^4.4.5",
 		"automatic-release": "1.1.x",
 		"pkgfiles": "2.3.x",
+		"typescript": "^2.9.2",
 		"webpack": "4.12.x"
 	}
 }
