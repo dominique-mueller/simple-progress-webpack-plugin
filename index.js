@@ -4,6 +4,7 @@
 process.noDeprecation = true;
 
 const CompactLogger = require( './logger/compact-logger' );
+const CompactCILogger = require( './logger/compact-ci-logger' );
 const MinimalLogger = require( './logger/minimal-logger' );
 const VerboseLogger = require( './logger/verbose-logger' );
 const ExpandedLogger = require( './logger/expanded-logger' );
@@ -34,6 +35,9 @@ module.exports = function SimpleProgressWebpackPlugin( options ) {
 		case 'verbose':
 		case 'debug':
 			return VerboseLogger( internalOptions );
+		case 'compact-ci':
+		case 'compactci':
+			return CompactCILogger( internalOptions );
 		case 'compact':
 		default:
 			return CompactLogger( internalOptions );
