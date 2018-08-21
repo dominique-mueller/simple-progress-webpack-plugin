@@ -111,6 +111,8 @@ debugging purposes (or for finding bugs in this plugin). *This logger format can
 
 - **[Progress Bar Webpack Plugin](https://github.com/clessg/progress-bar-webpack-plugin)** is an alternative progress plugin for webpack.
 However, instead of just logging out colored text it uses an animated progress bar. Perfect for anyone who likes bars more than stupid text!
+- **[Ghost Progress Webpack Plugin](https://github.com/ZSkycat/ghost-progress-webpack-plugin)** is a no side effects progress plugin for webpack.
+It can output progress and does not affect the output log of other tools, and is more suitable for use in a development server environment.
 - **[Friendly Errors Webpack Plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)** complements either this plugin or the
 *Progress Bar Webpack Plugin* described above. It gives developer a cleaner, more detailed screen once the build has finished. Definitely
 worth checking out!
