@@ -4,7 +4,7 @@
 (process as any).noDeprecation = true;
 
 import CompactLogger from './logger/compact-logger';
-import MinimalLogger from  './logger/minimal-logger';
+import MinimalLogger from './logger/minimal-logger';
 import VerboseLogger from './logger/verbose-logger';
 import ExpandedLogger from './logger/expanded-logger';
 
@@ -18,8 +18,8 @@ export type InternalOptions = {
   color: boolean;
 }
 
-function getOption( options: PluginOptions, key: string, value: string | boolean ): string | boolean {
-	return ( options && options.hasOwnProperty( key ) ) ? options[ key ] : value;
+function getOption(options: PluginOptions, key: string, value: string | boolean): string | boolean {
+  return (options && options.hasOwnProperty(key)) ? options[key] : value;
 }
 
 /**
@@ -27,26 +27,26 @@ function getOption( options: PluginOptions, key: string, value: string | boolean
  *
  * @param options - Custom options
  */
-export default function SimpleProgressWebpackPlugin( options: PluginOptions ) {
+export default function SimpleProgressWebpackPlugin(options: PluginOptions) {
 
-	const internalOptions: InternalOptions = {
-		format: <string>getOption( options, 'format', 'compact' ),
-		color: <boolean>getOption( options, 'color', true )
-	};
+  const internalOptions: InternalOptions = {
+    format: <string>getOption(options, 'format', 'compact'),
+    color: <boolean>getOption(options, 'color', true)
+  };
 
-	// Return the correct progress plugin
-	switch ( internalOptions.format ) {
-		case 'minimal':
-			return MinimalLogger( internalOptions );
-		case 'expanded':
-		case 'extended':
-			return ExpandedLogger( internalOptions );
-		case 'verbose':
-		case 'debug':
-			return VerboseLogger( internalOptions );
-		case 'compact':
-		default:
-			return CompactLogger( internalOptions );
-	}
+  // Return the correct progress plugin
+  switch (internalOptions.format) {
+    case 'minimal':
+      return MinimalLogger(internalOptions);
+    case 'expanded':
+    case 'extended':
+      return ExpandedLogger(internalOptions);
+    case 'verbose':
+    case 'debug':
+      return VerboseLogger(internalOptions);
+    case 'compact':
+    default:
+      return CompactLogger(internalOptions);
+  }
 
 };
