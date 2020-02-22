@@ -31,7 +31,7 @@
 	"dependencies": {
 		"chalk": "2.4.x",
 		"figures": "2.0.x",
-		"log-update": "2.3.x"
+		"log-update": "4.0.x"
 	},
 	"peerDependencies": {
 		"webpack": ">=2.0.0"
