@@ -30,7 +30,7 @@
 	},
 	"dependencies": {
 		"chalk": "2.4.x",
-		"figures": "2.0.x",
+		"figures": "3.2.x",
 		"log-update": "2.3.x"
 	},
 	"peerDependencies": {
