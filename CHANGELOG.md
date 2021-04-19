@@ -1,6 +1,6 @@
 # Changelog
 
-Also see the **[release page](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases)**.
+Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases)**.
 
 <br>
 
@@ -90,9 +90,3 @@ Also see the **[release page](https://github.com/dominique-mueller/simple-progre
 ### Features
 
 * Add initial version ([#1](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/1)) ([f131063](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/f131063))
-
-<br>
-
----
-
-<sup>*Changelog generated automatically by [automatic-release](https://github.com/dominique-mueller/automatic-release).*</sup>
