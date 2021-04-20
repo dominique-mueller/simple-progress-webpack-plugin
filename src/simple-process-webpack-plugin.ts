@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { ProgressPlugin } from 'webpack';
+import webpack, { WebpackPluginInstance } from 'webpack';
 
 import { CompactLogger } from './loggers/CompactLogger';
 import { ExpandedLogger } from './loggers/ExpandedLogger';
@@ -12,22 +12,39 @@ import { SimpleProgressWebpackPluginOptions } from './simple-process-webpack-plu
  *
  * @param options - Custom options
  */
-export const SimpleProgressWebpackPlugin = (options: SimpleProgressWebpackPluginOptions): ProgressPlugin => {
-  // Disable color if specifically configured
-  if (options.color === false) {
-    chalk.supportsColor = false;
+export class SimpleProgressWebpackPlugin implements WebpackPluginInstance {
+  /**
+   * Options
+   */
+  private options: SimpleProgressWebpackPluginOptions;
+
+  /**
+   * Constructor
+   *
+   * @param options
+   */
+  constructor(options: SimpleProgressWebpackPluginOptions) {
+    this.options = options;
   }
 
-  // Return the correct progress plugin
-  switch (options.format) {
-    case 'minimal':
-      return MinimalLogger();
-    case 'expanded':
-      return ExpandedLogger();
-    case 'verbose':
-      return VerboseLogger();
-    case 'compact':
-    default:
-      return CompactLogger();
+  /**
+   * Apply
+   */
+  public apply(compiler: webpack.Compiler): ReturnType<WebpackPluginInstance['apply']> {
+    // Disable color if specifically configured
+    if (this.options.color === false) {
+      chalk.supportsColor = false;
+    }
+
+    // Run the correct plugin, falling back to 'compact' by default
+    const progressPlugin =
+      this.options.format === 'minimal'
+        ? new MinimalLogger(this.options)
+        : this.options.format === 'expanded'
+        ? new ExpandedLogger(this.options)
+        : this.options.format === 'verbose'
+        ? new VerboseLogger(this.options)
+        : new CompactLogger(this.options);
+    return progressPlugin.apply(compiler);
   }
-};
+}
