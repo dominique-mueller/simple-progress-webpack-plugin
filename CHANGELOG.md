@@ -8,7 +8,7 @@ Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progres
 
 ### Chores
 
-* **dependencies:** Upgrade webpack peer-dependency ([#31](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/31)) ([e9e6598](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/e9e6598))
+- **dependencies:** Upgrade webpack peer-dependency ([#31](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/31)) ([e9e6598](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/e9e6598))
 
 <br>
 
@@ -16,7 +16,7 @@ Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progres
 
 ### Bug Fixes
 
-* **logger:** Add missing chalk import ([#28](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/28)) ([0545e0c](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/0545e0c)), closes [#27](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/27)
+- **logger:** Add missing chalk import ([#28](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/28)) ([0545e0c](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/0545e0c)), closes [#27](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/27)
 
 <br>
 
@@ -24,15 +24,15 @@ Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progres
 
 ### Chores
 
-* **dependencies:** Update dependency automatic-release to 1.1.x ([#22](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/22)) ([bc08363](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/bc08363))
-* **dependencies:** Update dependency chalk to 2.3.x ([#25](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/25)) ([0d8f851](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/0d8f851))
-* **dependencies:** Update dependency log-update to 2.3.x ([#23](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/23)) ([c276852](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/c276852))
-* **dependencies:** Update dependency webpack to 2.7.x ([#24](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/24)) ([07ad4e9](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/07ad4e9))
-* **renovate:** Add renovate ([#21](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/21)) ([4d0d324](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/4d0d324))
+- **dependencies:** Update dependency automatic-release to 1.1.x ([#22](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/22)) ([bc08363](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/bc08363))
+- **dependencies:** Update dependency chalk to 2.3.x ([#25](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/25)) ([0d8f851](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/0d8f851))
+- **dependencies:** Update dependency log-update to 2.3.x ([#23](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/23)) ([c276852](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/c276852))
+- **dependencies:** Update dependency webpack to 2.7.x ([#24](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/24)) ([07ad4e9](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/07ad4e9))
+- **renovate:** Add renovate ([#21](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/21)) ([4d0d324](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/4d0d324))
 
 ### Features
 
-* **options:** Add color flag ([#20](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/20)) ([4e4aa43](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/4e4aa43))
+- **options:** Add color flag ([#20](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/20)) ([4e4aa43](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/4e4aa43))
 
 <br>
 
@@ -40,11 +40,11 @@ Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progres
 
 ### Bug Fixes
 
-* **progress:** Fix progress to be printed for every webpack run (e.g. in watch mode) ([#13](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/13)) ([d841726](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/d841726)), closes [#11](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/11)
+- **progress:** Fix progress to be printed for every webpack run (e.g. in watch mode) ([#13](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/13)) ([d841726](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/d841726)), closes [#11](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/11)
 
 ### Chores
 
-* **dependencies:** Update webpack to latest version ([#12](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/12)) ([4f85912](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/4f85912))
+- **dependencies:** Update webpack to latest version ([#12](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/12)) ([4f85912](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/4f85912))
 
 <br>
 
@@ -52,11 +52,11 @@ Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progres
 
 ### Bug Fixes
 
-* **module-names:** Fix module name transformation ([#8](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/8)) ([3fc27d9](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/3fc27d9)), closes [#7](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/7)
+- **module-names:** Fix module name transformation ([#8](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/8)) ([3fc27d9](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/3fc27d9)), closes [#7](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/7)
 
 ### Chores
 
-* **dependencies:** Update dependencies to their latest version ([#9](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/9)) ([39a51d4](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/39a51d4))
+- **dependencies:** Update dependencies to their latest version ([#9](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/9)) ([39a51d4](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/39a51d4))
 
 <br>
 
@@ -64,7 +64,7 @@ Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progres
 
 ### Chores
 
-* **travis:** Extend Travis CI install script ([#6](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/6)) ([15d71af](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/15d71af))
+- **travis:** Extend Travis CI install script ([#6](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/6)) ([15d71af](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/15d71af))
 
 <br>
 
@@ -72,7 +72,7 @@ Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progres
 
 ### Chores
 
-* **travis:** Add automatic-release ([#5](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/5)) ([f0364bb](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/f0364bb))
+- **travis:** Add automatic-release ([#5](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/5)) ([f0364bb](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/f0364bb))
 
 <br>
 
@@ -80,13 +80,13 @@ Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progres
 
 ### Chores
 
-* **travis:** Enable Travis CI ([#4](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/4)) ([17ade0e](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/17ade0e))
+- **travis:** Enable Travis CI ([#4](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/4)) ([17ade0e](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/17ade0e))
 
 ### Documentation
 
-* **readme:** Add documentation ([#2](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/2)) ([94bdfea](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/94bdfea))
-* **readme:** Add screenshots, extend descriptions ([#3](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/3)) ([ceed884](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/ceed884))
+- **readme:** Add documentation ([#2](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/2)) ([94bdfea](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/94bdfea))
+- **readme:** Add screenshots, extend descriptions ([#3](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/3)) ([ceed884](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/ceed884))
 
 ### Features
 
-* Add initial version ([#1](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/1)) ([f131063](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/f131063))
+- Add initial version ([#1](https://github.com/dominique-mueller/simple-progress-webpack-plugin/issues/1)) ([f131063](https://github.com/dominique-mueller/simple-progress-webpack-plugin/commit/f131063))

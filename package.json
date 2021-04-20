@@ -1,6 +1,6 @@
 {
   "name": "simple-progress-webpack-plugin",
-  "description": "A simple progress plugin for Webpack, coming with four different logging output formats.",
+  "description": "A simple progress plugin for Webpack.",
   "version": "1.1.2",
   "license": "MIT",
   "repository": {
@@ -14,16 +14,52 @@
     "simple",
     "logger"
   ],
-  "main": "./index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
+  },
+  "module": "./index.js",
+  "main": "./index.cjs",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "npm run build:clean && npm run build:bundle && npm run build:assets",
+    "build:assets": "copyfiles package.json CHANGELOG.md LICENSE README.md docs/** dist",
+    "build:bundle": "rollup --config rollup.config.js",
+    "build:clean": "rimraf -r dist",
+    "lint": "eslint index.ts src/** --max-warnings 0",
+    "lint:fix": "eslint index.ts src/** --max-warnings 0 --fix"
+  },
   "dependencies": {
-    "chalk": "2.4.x",
-    "figures": "2.0.x",
-    "log-update": "2.3.x"
+    "chalk": "4.1.x",
+    "figures": "3.2.x",
+    "log-update": "4.0.x"
   },
   "peerDependencies": {
     "webpack": ">=2.0.0"
   },
   "devDependencies": {
-    "webpack": "4.17.x"
+    "@rollup/plugin-commonjs": "18.0.x",
+    "@rollup/plugin-node-resolve": "11.2.x",
+    "@rollup/plugin-typescript": "8.2.x",
+    "@types/node": "14.14.x",
+    "@typescript-eslint/eslint-plugin": "4.14.x",
+    "@typescript-eslint/parser": "4.14.x",
+    "copyfiles": "2.4.x",
+    "eslint-config-prettier": "7.2.x",
+    "eslint-plugin-import": "2.22.x",
+    "eslint-plugin-prettier": "3.3.x",
+    "eslint-plugin-simple-import-sort": "7.0.x",
+    "eslint": "7.19.x",
+    "prettier": "2.2.x",
+    "rimraf": "3.0.x",
+    "rollup-plugin-bundle-size": "1.0.x",
+    "rollup-plugin-node-externals": "2.2.x",
+    "rollup-plugin-typescript2": "0.30.x",
+    "rollup": "2.45.x",
+    "typescript": "4.1.x",
+    "webpack": "5.34.x"
   }
 }

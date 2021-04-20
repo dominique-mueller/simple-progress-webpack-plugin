@@ -27,7 +27,7 @@ npm install simple-progress-webpack-plugin --save-dev
 
 ### Requirements
 
-- **simple-progress-webpack-plugin** requires **NodeJS 7** (or higher) to be installed
+- **simple-progress-webpack-plugin** requires **NodeJS 12** (or higher) to be installed
 
 <br><br><br>
 

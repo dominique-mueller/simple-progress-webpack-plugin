@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "module": "ES2015",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "target": "es2017",
+    "sourceMap": true
+  },
+  "include": ["index.ts", "src/**/*.ts", "index.interfaces.ts"],
+  "files": ["index.ts"]
+}
