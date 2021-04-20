@@ -1,12 +1,12 @@
 import chalk from 'chalk';
 import log from 'log-update';
 import * as path from 'path';
-import { ProgressPlugin } from 'webpack';
+import webpack from 'webpack';
 
 /**
  * Minimal Logger
  */
-export const MinimalLogger = (): ProgressPlugin => {
+export const MinimalLogger = (): webpack.ProgressPlugin => {
   // Variables for the process, reset after each run
   let startTime = new Date();
   let previousStep = 0;
@@ -19,7 +19,7 @@ export const MinimalLogger = (): ProgressPlugin => {
    * Use the webpack-internal progress plugin as the base of the logger
    */
   const absoluteProjectPath = `${path.resolve('.').toString()}`;
-  return new ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
+  return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
     // Progress
     logLine = chalk.yellow(`[${Math.round(progress * 100)}%] `);
 

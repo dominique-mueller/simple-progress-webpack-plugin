@@ -1,12 +1,12 @@
 import chalk from 'chalk';
 import figures from 'figures';
 import * as path from 'path';
-import { ProgressPlugin } from 'webpack';
+import webpack from 'webpack';
 
 /**
  * Expanded Logger
  */
-export const ExpandedLogger = (): ProgressPlugin => {
+export const ExpandedLogger = (): webpack.ProgressPlugin => {
   // Variables for the process, reset after each run
   let startTime = new Date();
   let previousStep = 0;
@@ -18,7 +18,7 @@ export const ExpandedLogger = (): ProgressPlugin => {
    * Use the webpack-internal progress plugin as the base of the logger
    */
   const absoluteProjectPath = `${path.resolve('.').toString()}`;
-  return new ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
+  return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
     // Reset process variables for this run
     if (previousStep === 0) {
       startTime = new Date();

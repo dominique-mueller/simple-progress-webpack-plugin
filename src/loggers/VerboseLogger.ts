@@ -1,4 +1,4 @@
-import { ProgressPlugin } from 'webpack';
+import webpack from 'webpack';
 
 /**
  * Calculate a time prefix (similar to what gulp does)
@@ -14,7 +14,7 @@ const getTimePrefix = (): string => {
 /**
  * Verbose Logger (aka "the full truth")
  */
-export const VerboseLogger = (): ProgressPlugin => {
+export const VerboseLogger = (): webpack.ProgressPlugin => {
   // Variables for the process, reset after each run
   let startTime = new Date();
   let previousStep = 0;
@@ -26,7 +26,7 @@ export const VerboseLogger = (): ProgressPlugin => {
   /**
    * Use the webpack-internal progress plugin as the base
    */
-  return new ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
+  return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
     // Reset process variables for this run
     if (previousStep === 0) {
       startTime = new Date();

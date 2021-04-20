@@ -2,12 +2,12 @@ import chalk from 'chalk';
 import figures from 'figures';
 import log from 'log-update';
 import * as path from 'path';
-import { ProgressPlugin } from 'webpack';
+import webpack from 'webpack';
 
 /**
  * Compact Logger
  */
-export const CompactLogger = (): ProgressPlugin => {
+export const CompactLogger = (): webpack.ProgressPlugin => {
   // Variables for the process, reset after each run
   let startTime = new Date();
   let previousStep = 0;
@@ -20,7 +20,7 @@ export const CompactLogger = (): ProgressPlugin => {
    * Use the webpack-internal progress plugin as the base of the logger
    */
   const absoluteProjectPath = `${path.resolve('.').toString()}`;
-  return new ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
+  return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
     // Reset log output
     logLines = [];
 
