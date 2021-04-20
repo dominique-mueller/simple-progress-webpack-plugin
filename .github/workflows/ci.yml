@@ -54,17 +54,17 @@ jobs:
       - name: Build
         run: npm run build
       - name: Pack build
-        run: \
+        run: |
           cd dist
           npm pack
           cd ..
       - name: Install example
-        run: \
+        run: |
           cd example
           npm install
           cd ..
       - name: Build example
-        run: \
+        run: |
           cd example
           npm run build
           cd ..
