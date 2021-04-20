@@ -40,15 +40,15 @@ export class MinimalLogger implements WebpackPluginInstance {
     return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
       // Initial log
       let logLine = 'Webpack: Starting ...';
-      log(logLine);
-
-      // Progress
-      logLine = chalk.yellow(`[${Math.round(progress * 100)}%] `);
 
       // Reset process variables for this run
       if (previousStep === 0) {
+        log(logLine);
         startTime = new Date();
       }
+
+      // Progress
+      logLine = chalk.yellow(`[${Math.round(progress * 100)}%] `);
 
       // STEP 1: COMPILATION
       if (progress >= 0 && progress < 0.1) {

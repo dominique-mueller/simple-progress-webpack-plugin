@@ -38,11 +38,9 @@ export class ExpandedLogger implements WebpackPluginInstance {
      */
     const absoluteProjectPath = `${path.resolve('.').toString()}`;
     return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
-      // Initial log
-      console.log(chalk.white('Webpack: Starting ...'));
-
       // Reset process variables for this run
       if (previousStep === 0) {
+        console.log(chalk.white('Webpack: Starting ...'));
         startTime = new Date();
       }
 

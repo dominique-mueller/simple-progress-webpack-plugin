@@ -29,6 +29,7 @@
     "build:assets": "copyfiles package.json CHANGELOG.md LICENSE README.md docs/** dist",
     "build:bundle": "rollup --config rollup.config.js",
     "build:clean": "rimraf -r dist",
+    "pack": "cd dist && npm pack && cd ..",
     "lint": "eslint index.ts src/** --max-warnings 0",
     "lint:fix": "eslint index.ts src/** --max-warnings 0 --fix"
   },

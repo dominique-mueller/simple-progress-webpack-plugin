@@ -40,14 +40,11 @@ export class CompactLogger implements WebpackPluginInstance {
     const absoluteProjectPath = `${path.resolve('.').toString()}`;
     return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
       // Initial log
-      let logLines = [];
-      log('Webpack: Starting ...');
-
-      // Reset log output
-      logLines = [];
+      const logLines = [];
 
       // Reset process variables for this run
       if (previousStep === 0) {
+        log('Webpack: Starting ...');
         startTime = new Date();
       }
 

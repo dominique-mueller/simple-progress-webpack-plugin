@@ -37,3 +37,34 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
+
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.15.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Pack build
+        run: |
+          cd dist
+          npm pack
+          cd ..
+      - name: Install example
+        run: |
+          cd example
+          npm install
+          cd ..
+      - name: Build example
+        run: |
+          cd example
+          npm run build
+          cd ..
