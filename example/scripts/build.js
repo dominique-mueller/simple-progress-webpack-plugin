@@ -51,7 +51,7 @@ const config = configFactory('production');
 // Use custom logger
 config.plugins.push(
   new SimpleProgressWebpackPlugin({
-    mode: 'expanded',
+    format: 'expanded',
   }),
 );
 

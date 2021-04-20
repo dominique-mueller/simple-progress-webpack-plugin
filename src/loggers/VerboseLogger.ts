@@ -34,11 +34,11 @@ export class VerboseLogger implements WebpackPluginInstance {
      */
     return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
       // Initial logs
-      let logLine: string;
-      console.log(`${this.getTimePrefix()} Webpack: Starting ...\n`);
+      let logLine = 'Webpack: Starting ...';
 
       // Reset process variables for this run
       if (previousStep === 0) {
+        console.log(`${this.getTimePrefix()} ${logLine}\n`);
         startTime = new Date();
       }
 
