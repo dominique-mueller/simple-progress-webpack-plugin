@@ -1,1 +1,2 @@
-export * from './src/simple-process-webpack-plugin';
+import { SimpleProgressWebpackPlugin } from './src/simple-process-webpack-plugin';
+export default SimpleProgressWebpackPlugin;

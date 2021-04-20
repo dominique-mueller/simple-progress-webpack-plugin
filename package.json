@@ -17,10 +17,12 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./index.js"
+      "import": "./index.js",
+      "require": "./index.cjs"
     }
   },
   "module": "./index.js",
+  "main": "./index.cjs",
   "types": "./index.d.ts",
   "scripts": {
     "build": "npm run build:clean && npm run build:bundle && npm run build:assets",
