@@ -44,7 +44,7 @@ export class CompactLogger implements WebpackPluginInstance {
 
       // Reset process variables for this run
       if (previousStep === 0) {
-        log('Webpack: Starting ...');
+        log(this.options.name);
         startTime = new Date();
       }
 
@@ -152,7 +152,7 @@ export class CompactLogger implements WebpackPluginInstance {
         const finishTime = new Date();
         const processTime = ((finishTime.getTime() - startTime.getTime()) / 1000).toFixed(3);
 
-        logLines.push(chalk.white(`\nWebpack: Finished after ${processTime} seconds.\n`));
+        logLines.push(chalk.white(`\nFinished after ${processTime} seconds.\n`));
       }
 
       // Finally, let's bring those logs to da screen

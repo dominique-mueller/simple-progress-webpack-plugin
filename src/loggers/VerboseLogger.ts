@@ -34,7 +34,7 @@ export class VerboseLogger implements WebpackPluginInstance {
      */
     return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
       // Initial logs
-      let logLine = 'Webpack: Starting ...';
+      let logLine = this.options.name;
 
       // Reset process variables for this run
       if (previousStep === 0) {
@@ -76,7 +76,7 @@ export class VerboseLogger implements WebpackPluginInstance {
         const finishTime = new Date();
         const processTime = ((finishTime.getTime() - startTime.getTime()) / 1000).toFixed(3);
 
-        logLine = `Webpack: Finished after ${processTime} seconds.\n`;
+        logLine = `Finished after ${processTime} seconds.\n`;
       }
 
       // Finally, let's bring those logs to da screen
