@@ -23,8 +23,13 @@ export class SimpleProgressWebpackPlugin implements WebpackPluginInstance {
    *
    * @param options
    */
-  constructor(options: SimpleProgressWebpackPluginOptions) {
-    this.options = options;
+  constructor(options: Partial<SimpleProgressWebpackPluginOptions>) {
+    this.options = {
+      color: true,
+      format: 'compact',
+      name: 'Webpack: Starting ...',
+      ...options,
+    };
   }
 
   /**

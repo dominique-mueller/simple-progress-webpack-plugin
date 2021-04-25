@@ -40,7 +40,7 @@ export class ExpandedLogger implements WebpackPluginInstance {
     return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
       // Reset process variables for this run
       if (previousStep === 0) {
-        console.log(chalk.white('Webpack: Starting ...'));
+        console.log(chalk.white(this.options.name));
         startTime = new Date();
       }
 
@@ -137,7 +137,7 @@ export class ExpandedLogger implements WebpackPluginInstance {
         const finishTime = new Date();
         const processTime = ((finishTime.getTime() - startTime.getTime()) / 1000).toFixed(3);
 
-        console.log(chalk.white(`\nWebpack: Finished after ${processTime} seconds.\n`));
+        console.log(chalk.white(`\nFinished after ${processTime} seconds.\n`));
       }
     }).apply(compiler);
   }

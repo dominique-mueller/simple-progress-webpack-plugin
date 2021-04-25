@@ -7,6 +7,7 @@ export type SimpleProgressWebpackPluginFormat = 'minimal' | 'compact' | 'expande
  * Simple Progress Webpack Plugin Options
  */
 export interface SimpleProgressWebpackPluginOptions {
-  color?: boolean;
-  format?: SimpleProgressWebpackPluginFormat;
+  color: boolean;
+  format: SimpleProgressWebpackPluginFormat;
+  name: string;
 }

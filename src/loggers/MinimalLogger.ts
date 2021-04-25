@@ -39,7 +39,7 @@ export class MinimalLogger implements WebpackPluginInstance {
     const absoluteProjectPath = `${path.resolve('.').toString()}`;
     return new webpack.ProgressPlugin((progress, message, moduleProgress, activeModules, moduleName) => {
       // Initial log
-      let logLine = 'Webpack: Starting ...';
+      let logLine = this.options.name;
 
       // Reset process variables for this run
       if (previousStep === 0) {
@@ -140,7 +140,7 @@ export class MinimalLogger implements WebpackPluginInstance {
         const finishTime = new Date();
         const processTime = ((finishTime.getTime() - startTime.getTime()) / 1000).toFixed(3);
 
-        logLine = chalk.white(`Webpack: Finished after ${processTime} seconds.\n`); // Overwrite
+        logLine = chalk.white(`Finished after ${processTime} seconds.\n`); // Overwrite
       }
 
       // Finally, let's bring those logs to da screen
