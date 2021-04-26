@@ -1,7 +1,7 @@
 /**
  * Simple Progress Webpack Plugin Format
  */
-export type SimpleProgressWebpackPluginFormat = 'minimal' | 'compact' | 'expanded' | 'verbose';
+export type SimpleProgressWebpackPluginFormat = 'compact' | 'expanded' | 'minimal' | 'simple' | 'verbose';
 
 /**
  * Simple Progress Webpack Plugin Options

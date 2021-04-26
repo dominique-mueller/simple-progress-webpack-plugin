@@ -4,6 +4,7 @@ import webpack, { WebpackPluginInstance } from 'webpack';
 import { CompactLogger } from './loggers/CompactLogger';
 import { ExpandedLogger } from './loggers/ExpandedLogger';
 import { MinimalLogger } from './loggers/MinimalLogger';
+import { SimpleLogger } from './loggers/SimpleLogger';
 import { VerboseLogger } from './loggers/VerboseLogger';
 import { SimpleProgressWebpackPluginOptions } from './simple-process-webpack-plugin.interfaces';
 
@@ -45,6 +46,8 @@ export class SimpleProgressWebpackPlugin implements WebpackPluginInstance {
     const progressPlugin =
       this.options.format === 'minimal'
         ? new MinimalLogger(this.options)
+        : this.options.format === 'simple'
+        ? new SimpleLogger(this.options)
         : this.options.format === 'expanded'
         ? new ExpandedLogger(this.options)
         : this.options.format === 'verbose'
