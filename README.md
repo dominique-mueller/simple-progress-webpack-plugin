@@ -2,7 +2,7 @@
 
 # simple-progress-webpack-plugin
 
-**A simple progress plugin for [Webpack](https://webpack.js.org/), coming with four different logging output formats.**
+**A simple progress plugin for [Webpack](https://webpack.js.org/).**
 
 </div>
 
