@@ -4,6 +4,34 @@ Also see **[GitHub releases](https://github.com/dominique-mueller/simple-progres
 
 <br>
 
+## [2.0.0](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/2.0.0) (2021-04-27)
+
+Wow, more than 3 years since the last release? Time for some updates, I guess. This release mostly adds requested features, but also now
+requires you to use at least NodeJS 12.
+
+### Features
+
+- Add long requested `simple` logging format, similar to `compact` but more CI friendly ([#63](https://github.com/dominique-mueller/simple-progress-webpack-plugin/pull/63))
+- Add `name` option to customize build title ([#62](https://github.com/dominique-mueller/simple-progress-webpack-plugin/pull/62))
+
+### Bug Fixes
+
+- Fix the build name appearing multiple times ([#60](https://github.com/dominique-mueller/simple-progress-webpack-plugin/pull/60))
+
+### Documentation
+
+- Add new preview images, update README ([#64](https://github.com/dominique-mueller/simple-progress-webpack-plugin/pull/64))
+
+### Chores
+
+- Migrate code base to TypeScript, emit both ESM and CJS bundles in build, add linter, and migrate to GitHub actions ([#60](https://github.com/dominique-mueller/simple-progress-webpack-plugin/pull/60))
+
+### BREAKING CHANGES
+
+- NodeJS 12 (or higher) is now required
+
+<br>
+
 ## [1.1.2](https://github.com/dominique-mueller/simple-progress-webpack-plugin/releases/tag/1.1.2) (2018-03-06)
 
 ### Chores
