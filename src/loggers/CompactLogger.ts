@@ -42,14 +42,17 @@ export class CompactLogger implements WebpackPluginInstance {
       // Initial log
       const logLines = [];
 
+      // pick name of the build
+      const name = this.options.name;
+
       // Reset process variables for this run
       if (previousStep === 0) {
-        log(this.options.name);
+        log(name);
         startTime = new Date();
       }
 
       // STEP 0: HEADER
-      logLines.push(chalk.white('Webpack: Starting ...\n'));
+      logLines.push(chalk.white(`${name}\n`));
 
       // STEP 1: COMPILATION
       if (progress >= 0 && progress < 0.1) {
